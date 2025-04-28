@@ -235,26 +235,22 @@
             let userType;
             let userIdPrefix;
             
-            // 基于用户特征进行歧视性分类
+             // 基于用户特征进行歧视性分类
             if (premiumWillingness === 'A' || premiumWillingness === 'B') {
                 // 愿意支付额外费用的用户
                 if (recommendation === 'A' || recommendation === 'B') {
                     // 愿意推荐的用户
                     userType = "尊贵体验用户";
-                    userIdPrefix = "ZG";
+                    userId = "VU666888999"; // 推荐并愿意付费的用户
                 } else {
                     userType = "普通体验用户";
-                    userIdPrefix = "PT";
+                    userId = "PU148994620"; // 付费但不愿意推荐的用户
                 }
             } else {
                 // 不太愿意支付额外费用的用户
                 userType = "普通体验用户";
-                userIdPrefix = "PT";
+                userId = "PU148994620"; // 不愿意付费的用户
             }
-            
-            // 生成用户ID
-            const randomId = Math.floor(Math.random() * 900000) + 100000;
-            const userId = `${userIdPrefix}${randomId}`;
             
             // 显示结果
             document.getElementById('result').innerHTML = `
